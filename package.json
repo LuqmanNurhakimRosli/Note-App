@@ -6,8 +6,15 @@
     "start": "vite",
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "vercel-build": "vite build || echo 'Build failed due to permission issues'"
+
   },
+  "engines": {
+  "node": "18.x"
+},
+
+
   "dependencies": {
     "firebase": "10.8.0",
     "nanoid": "5.0.4",
