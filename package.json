@@ -1,6 +1,7 @@
 {
-  "name": "Scrim-s04mqf3",
-  "description": "https://scrimba.com/learn-react-legacy-c003ni72th/~04k",
+  "name": "notes-markdown-app",
+  "version": "1.0.0",
+  "description": "A React Markdown Notes Application",
   "scripts": {
     "start": "vite",
     "dev": "vite",
@@ -8,16 +9,16 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "firebase": "^11.1.0",
-    "nanoid": "3.1.28",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
-    "react-mde": "^11.5.0",
-    "react-split": "2.0.13",
-    "showdown": "^1.9.1",
-    "vite": "latest"
+    "firebase": "10.8.0",
+    "nanoid": "5.0.4",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-mde": "11.5.0",
+    "react-split": "2.0.14",
+    "showdown": "2.1.0"
   },
   "devDependencies": {
-    "@vitejs/plugin-react": "^4.3.4"
+    "@vitejs/plugin-react": "4.2.1",
+    "vite": "5.0.12"
   }
 }
