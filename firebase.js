@@ -10,6 +10,8 @@ const firebaseConfig = {
   appId: "1:77925555183:web:bbdc7ed43e0f6b2653b41a"
 };
 
-const app = initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig)
 const db = getFirestore(app)
-export const notesCollection = collection(db, "notes")
+const notesCollection = collection(db, "notes")
+
+export { db, notesCollection }
