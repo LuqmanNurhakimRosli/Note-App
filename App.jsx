@@ -12,6 +12,7 @@ import {
 } from "firebase/firestore"
 import { notesCollection, db } from "./firebase"
 export default function App() {
+    console.log("App is rendering")
     const [notes, setNotes] = React.useState([])
     const [currentNoteId, setCurrentNoteId] = React.useState("")
     
@@ -22,7 +23,9 @@ export default function App() {
     const sortedNotes = notes.sort((a, b) => b.updatedAt - a.updatedAt)
 
     React.useEffect(() => {
+        console.log("Firebase listener setup")
         const unsubscribe = onSnapshot(notesCollection, function (snapshot) {
+            console.log("Firebase data:", snapshot.docs)
             const notesArr = snapshot.docs.map(doc => ({
                 ...doc.data(),
                 id: doc.id
