@@ -7,12 +7,8 @@ import { notesCollection, db } from "./firebase"
 import { onSnapshot, addDoc, deleteDoc , doc } from "firebase/firestore"
 
 export default function App() {
-    const [notes, setNotes] = React.useState(
-        () => JSON.parse(localStorage.getItem("notes")) || []
-    )
-    const [currentNoteId, setCurrentNoteId] = React.useState(
-        (notes[0]?.id) || ""
-    )
+    const [notes, setNotes] = React.useState( [])
+    const [currentNoteId, setCurrentNoteId] = React.useState("")
     
     const currentNote = 
         notes.find(note => note.id === currentNoteId) 
@@ -37,6 +33,12 @@ export default function App() {
         const newNoteRef = await addDoc(notesCollection, newNote)
         setCurrentNoteId(newNoteRef.id)
     }
+
+    React.useEffect(() => {
+        if (!currentNoteId) {
+            setCurrentNoteId(notes[0]?.id)
+        }
+    }, [notes])
 
     function updateNote(text) {
         setNotes(oldNotes => {
@@ -77,8 +79,6 @@ export default function App() {
                             deleteNote={deleteNote}
                         />
                         {
-                            currentNoteId &&
-                            notes.length > 0 &&
                             <Editor
                                 currentNote={currentNote}
                                 updateNote={updateNote}
