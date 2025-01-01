@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles for react-split */
+.gutter {
+    background-color: #edf2f7;
+    background-repeat: no-repeat;
+    background-position: 50%;
+}
+
+.gutter:hover {
+    background-color: #e2e8f0;
+}
+
+.gutter.gutter-horizontal {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAeCAYAAADkftS9AAAAIklEQVQoU2M4c+bMfxAGAgYYmwGrIIiDjrELjpo5aiZeMwF+yNnOs5KSvgAAAABJRU5ErkJggg==');
+    cursor: col-resize;
+    width: 4px;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #cbd5e0;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a0aec0;
+}
+
+/* ReactMDE overrides */
+.react-mde {
+    height: 100% !important;
+    display: flex;
+    flex-direction: column;
+}
+
+.mde-header {
+    @apply border-b border-gray-200 bg-gray-50;
+}
+
+.mde-header button {
+    @apply text-gray-600 hover:text-gray-800;
+}
+
+.mde-text {
+    height: 100% !important;
+}
+
+.mde-preview {
+    height: 100%;
+    overflow-y: auto;
+}
+
+.mde-preview .preview-content {
+    @apply px-4 py-2;
+}
+
+/* Add any custom styles below */ 
+
+/* Split.js styles */
+.split {
+    display: flex;
+    flex-direction: row;
+}
+
+.gutter {
+    background-color: #edf2f7;
+    background-repeat: no-repeat;
+    background-position: 50%;
+}
+
+.gutter.gutter-horizontal {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAeCAYAAADkftS9AAAAIklEQVQoU2M4c+bMfxAGAgYYmwGrIIiDjrELjpo5aiZeMwF+yNnOs5KSvgAAAABJRU5ErkJggg==');
+    cursor: col-resize;
+    width: 4px;
+}
+
+/* ReactMDE specific styles */
+.react-mde {
+    height: 100% !important;
+    display: flex;
+    flex-direction: column;
+}
+
+.mde-content {
+    flex: 1;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.mde-textarea-wrapper {
+    flex: 1;
+    overflow: hidden;
+}
+
+.mde-text {
+    height: 100% !important;
+}
+
+.mde-preview {
+    height: 100%;
+    overflow-y: auto;
+} 
